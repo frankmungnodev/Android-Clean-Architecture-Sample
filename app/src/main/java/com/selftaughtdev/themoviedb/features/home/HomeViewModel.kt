@@ -1,4 +1,4 @@
-package com.selftaughtdev.themoviedb.components.home
+package com.selftaughtdev.themoviedb.features.home
 
 import androidx.lifecycle.viewModelScope
 import com.selftaughtdev.domain.exception.AlertException

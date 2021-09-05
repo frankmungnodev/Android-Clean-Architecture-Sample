@@ -1,4 +1,4 @@
-package com.selftaughtdev.themoviedb.components.movies
+package com.selftaughtdev.themoviedb.features.movies
 
 import android.os.Bundle
 import android.view.View

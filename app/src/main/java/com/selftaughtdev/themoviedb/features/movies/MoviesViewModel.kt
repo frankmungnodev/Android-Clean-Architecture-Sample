@@ -1,4 +1,4 @@
-package com.selftaughtdev.themoviedb.components.movies
+package com.selftaughtdev.themoviedb.features.movies
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -19,7 +19,7 @@ class MoviesViewModel @Inject constructor(
 ) : BaseViewModel() {
 
     private var _pagingData = MutableLiveData<PagingData<Movie>>()
-    val pagingData: LiveData<PagingData<Movie>> get() = _pagingData
+    val pagingData: LiveData<PagingData<Movie>> get() = _pagingData 
 
     init {
         viewModelScope.launch {

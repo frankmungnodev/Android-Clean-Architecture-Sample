@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.selftaughtdev.themoviedb.components.movies.MoviesViewModel" />
+            type="com.selftaughtdev.themoviedb.features.movies.MoviesViewModel" />
     </data>
 
 

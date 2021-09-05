@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="com.selftaughtdev.themoviedb.components.series.SeriesViewModel" />
+            type="com.selftaughtdev.themoviedb.features.series.SeriesViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

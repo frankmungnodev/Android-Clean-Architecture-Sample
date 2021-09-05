@@ -1,4 +1,4 @@
-package com.selftaughtdev.themoviedb.components.series
+package com.selftaughtdev.themoviedb.features.series
 
 import com.selftaughtdev.themoviedb.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
