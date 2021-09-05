@@ -11,8 +11,7 @@ import com.selftaughtdev.themoviedb.databinding.ItemMoviesBinding
 class AdapterMovie constructor(
     private val click: (Movie) -> Unit
 ) : PagingDataAdapter<Movie, AdapterMovie.MovieViewHolder>(movieDiff) {
-
-
+    
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
         val movie = getItem(position)
         if (movie != null) {
@@ -30,8 +29,7 @@ class AdapterMovie constructor(
     class MovieViewHolder(
         private val binding: ItemMoviesBinding,
         private val itemClicked: (position: Int) -> Unit
-    ) :
-        RecyclerView.ViewHolder(binding.root) {
+    ) : RecyclerView.ViewHolder(binding.root) {
 
         init {
             binding.cardView.setOnClickListener { itemClicked(bindingAdapterPosition) }
