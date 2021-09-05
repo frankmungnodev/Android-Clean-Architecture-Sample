@@ -19,6 +19,7 @@ import com.selftaughtdev.themoviedb.exception.GlobalErrorHandler
 import com.selftaughtdev.themoviedb.util.observe
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+import timber.log.Timber
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -40,7 +41,9 @@ class FragmentMovies : BaseFragment<FragmentMoviesBinding, MoviesViewModel>() {
 
     private lateinit var gridLayoutManager: GridLayoutManager
 
-    private var adapterMovie = AdapterMovie { }
+    private var adapterMovie = AdapterMovie {
+        Timber.d(it.title)
+    }
     private lateinit var footerAdapter: AdapterLoadingState
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

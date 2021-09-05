@@ -22,24 +22,24 @@ class AdapterMovie constructor(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
-        return MovieViewHolder.from(parent)
+        val inflater = LayoutInflater.from(parent.context)
+        val binding = ItemMoviesBinding.inflate(inflater, parent, false)
+        return MovieViewHolder(binding) { getItem(it)?.let { movie -> click(movie) } }
     }
 
-    class MovieViewHolder(private val binding: ItemMoviesBinding) :
+    class MovieViewHolder(
+        private val binding: ItemMoviesBinding,
+        private val itemClicked: (position: Int) -> Unit
+    ) :
         RecyclerView.ViewHolder(binding.root) {
+
+        init {
+            binding.cardView.setOnClickListener { itemClicked(bindingAdapterPosition) }
+        }
 
         fun bind(movie: Movie) {
             binding.movie = movie
             binding.executePendingBindings()
-        }
-
-        companion object {
-            fun from(parent: ViewGroup): MovieViewHolder {
-                val inflater = LayoutInflater.from(parent.context)
-                val binding = ItemMoviesBinding.inflate(inflater, parent, false)
-
-                return MovieViewHolder(binding)
-            }
         }
     }
 
